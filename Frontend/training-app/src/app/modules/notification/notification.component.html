@@ -1,0 +1,20 @@
+<div class="container ">
+    <div class="container border rounded ml-1 p-4 box-shadow">
+        <div class="notification">
+            <h1>New notifications</h1>
+            <span class="badge">{{notifications.length}}</span>
+        </div>
+        <div *ngIf="notifications.length > 0" class="container">
+            <mat-card *ngFor="let notification of notifications" class="notification-card">
+                <mat-card-header class="notification-header">{{notification.title}}</mat-card-header>
+                <mat-card-content>{{notification.notificationContent}}</mat-card-content>
+                <mat-card-footer class="notification-footer">
+                    <button mat-raised-button (click)="openNotificationAnswerModal(notification)" color="primary">Answer</button>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <span *ngIf="notifications.length === 0">
+            You have no new notifications
+        </span>
+    </div>
+</div>

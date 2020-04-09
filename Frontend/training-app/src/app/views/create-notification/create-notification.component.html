@@ -1,0 +1,45 @@
+<div class="container mt-4">
+    <h2 class="text-center">Create new notification for team</h2>
+    <div class="container border rounded m-2 box-shadow">
+        <form [formGroup]="notificationFrom">
+            <div class="w-100"></div>
+            <div class=" players">
+                <h2 class="text-center">Send notification to</h2>
+                <div class="row m-4 rounded">
+                    <mat-card *ngFor="let player of players;" class="card">
+                        <mat-card-header class="mb-2">
+                            <img mat-card-sm-image class="user-img" src="assets/img/user.png">
+                            <span class="user-name">{{player.userName}}</span>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div>
+                                {{player.phoneNumber}}<br>
+                                {{player.position}}
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer>
+                            <button class="m-2 border" mat-button  color="warn" (click)="removeFromInvited(player.id)">Remove</button>
+                        </mat-card-footer>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="container rounded mt-4">
+                <h2 class="text-center">Notification Options</h2>
+                <mat-form-field class="input">
+                    <input matInput placeholder="Notification title" formControlName="title" required>
+                    <mat-error>
+                        Please provide title of the notification
+                    </mat-error>
+                </mat-form-field>
+                <div class="form-group">
+                    <label for="notification-text-area">Notification content</label>
+                    <textarea class="form-control" formControlName="notificationDescription" id="notification-text-area"
+                              rows="3"></textarea>
+                </div>
+            </div>
+            <div class="wrapper">
+                <button mat-raised-button class="m-2" (click)="onSubmit()" color="primary">Send</button>
+            </div>
+        </form>
+    </div>
+</div>

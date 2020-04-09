@@ -1,0 +1,3 @@
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\DAL.App\obj\Debug\netcoreapp3.1\DAL.App.csprojAssemblyReference.cache
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\DAL.App\obj\Debug\netcoreapp3.1\DAL.App.AssemblyInfoInputs.cache
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\DAL.App\obj\Debug\netcoreapp3.1\DAL.App.AssemblyInfo.cs

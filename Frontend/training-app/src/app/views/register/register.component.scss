@@ -1,0 +1,19 @@
+.container{
+    margin: auto;
+    width: 50%;
+    border: 3px solid rebeccapurple;
+    padding: 10px;
+}
+mat-card {
+    h2{
+        justify-content: center;
+    }
+    justify-content: center;
+    max-width: 400px;
+    margin: 4em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}

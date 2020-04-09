@@ -1,0 +1,44 @@
+<div id="modal-content-wrapper">
+    <header class="modal-header">
+        <h1 id="modal-title">
+            {{notificationToAnswer.title}}
+        </h1>
+        <button mat-raised-button color="warn" (click)="closeModal()"><span class="material-icons">close</span></button>
+    </header>
+    <section class="modal-body">
+        <div class="container">
+            <div class="row">
+                {{notificationToAnswer.notificationContent}}
+            </div>
+            <div class="row">
+                Training:
+                {{notificationToAnswer.trainingDto.trainingDate | date : "dd MMM yyyy"}}
+                {{notificationToAnswer.trainingDto.description}} at
+                {{notificationToAnswer.trainingDto.startTime}}
+            </div>
+
+        </div>
+        <div>
+            <form [formGroup]="notificationAnswerForm" class="container mt-4">
+                Are you planning to go to this training?
+                <mat-radio-group aria-label="Select an option" formControlName="answer">
+                    <mat-radio-button value="1" class="m-2">Yes</mat-radio-button>
+                    <mat-radio-button value="2" class="m-2">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="notificationAnswerForm.get('answer').value === '2'">
+                    <div>
+                        <label for="content">
+                            Enter reason you will not participate in this training
+                        </label>
+                        <textarea formControlName="content" id="content" cols="50" rows="10">
+                    </textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="modal-footer">
+        <button mat-button color="primary" (click)="onSubmit()"> Submit answer</button>
+        <button mat-button (click)="closeModal()">Go back</button>
+    </footer>
+</div>

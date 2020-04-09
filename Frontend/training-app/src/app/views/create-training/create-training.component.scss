@@ -1,0 +1,57 @@
+.container{
+    background: #E1E2E1;
+}
+.time-picker{
+    width: 15vw;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.input{
+    width: 15vw;
+}
+.content{
+    
+    align-self: center !important;
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+}
+.players{
+}
+
+.mat-card{
+    white-space: normal;
+    margin: 1rem;
+    width: 200px;
+    padding-left: 1rem !important;
+    .mat-card-header{
+        font-weight: bold;
+        margin-bottom: 4rem;
+        padding-bottom: 2rem;
+    }
+    .mat-card-footer{
+        align-content: center;
+    }
+}
+.card{
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+}
+.wrapper{
+    text-align: center;
+}
+.clock{
+    position: absolute;
+}
+.create-button{
+    border: #5c007a solid 1px;
+}
+.user-img{
+    margin-right: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.user-name {
+    margin-top: 1rem;
+}

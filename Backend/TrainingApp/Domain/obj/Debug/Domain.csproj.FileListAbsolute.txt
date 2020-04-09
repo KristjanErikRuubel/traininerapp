@@ -1,0 +1,53 @@
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\Domain\bin\Debug\Domain.dll
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\Domain\bin\Debug\Domain.pdb
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\Domain\obj\Debug\Domain.dll
+C:\Users\Kristjan\Desktop\lõputöö koodibaas\TrainingApp\Domain\obj\Debug\Domain.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Domain.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Domain.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Identity.Core.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Buffers.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Memory.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Identity.Core.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Buffers.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Memory.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\obj\Debug\Domain.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Domain\obj\Debug\Domain.pdb

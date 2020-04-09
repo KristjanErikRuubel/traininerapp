@@ -1,0 +1,74 @@
+<div class="container m-4 box-shadow rounded">
+    <h1 class="text-center mt-4">Training details</h1>
+    <div class="container">
+        <div class="row">
+            <table class="table table-responsive">
+                <tr>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                    <th>Date</th>
+                    <th>Start time</th>
+                </tr>
+                <tr>
+                    <td>{{training.description}} </td>
+                    <td>{{training.trainingStatus}}</td>
+                    <td>{{training.duration}}</td>
+                    <td>{{training.trainingDate | date: "dd MMM yyyy"}}</td>
+                    <td>{{training.startTime.substring(0, training.startTime.length - 3)}}</td>
+                </tr>
+            </table>
+        </div> 
+        <div class="row">
+            <h2>Training place</h2>
+            <div class="container">
+                <div class="row mt-2">
+                    {{training.trainingPlace.name}}
+                </div>
+                <div class="row mt-2">
+                    Address: {{training.trainingPlace.address}}
+                </div>
+                <div class="row mt-2">
+                    Open: {{training.trainingPlace.closingTime}} - {{training.trainingPlace.openingTime}}
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        
+    <div class="row">
+        <h2 class="text-center">People invited</h2>
+        <div class="container">
+            <mat-card *ngFor="let player of training.peopleInvited;">
+                <mat-card-header>
+                    <img mat-card-sm-image class="user-img" src="assets/img/user.png">
+                    <span class="user-name">{{player.userName}}</span>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        {{player.phoneNumber}}<br>
+                        {{player.position}}
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="text-center">People attending</h2>
+        <div class="container">
+            <mat-card *ngFor="let player of training.peopleAttending;" class="">
+                <mat-card-header class="mb-2">
+                    <img mat-card-sm-image class="user-img" src="assets/img/user.png">
+                    <span class="user-name">{{player.userName}}</span>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        {{player.phoneNumber}}<br>
+                        {{player.position}}
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

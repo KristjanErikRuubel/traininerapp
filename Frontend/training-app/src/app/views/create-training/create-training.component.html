@@ -1,0 +1,73 @@
+<div class="container m-4 border rounded content box-shadow">
+    <h2 class="text-center">Create new training</h2>
+    <form [formGroup]="trainingFrom" class="training-form">
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="input">
+                    <input matInput placeholder="Training duration" formControlName="duration" required>
+                    <mat-error>
+                        Please provide training duration
+                    </mat-error>
+                </mat-form-field>
+                <div class="w-100"></div>
+                <mat-form-field  class="input">
+                    <mat-label>Training place</mat-label>
+                    <mat-select formControlName="place">
+                        <mat-option *ngFor="let place of places" [value]="place.id">
+                            {{place.name}}: {{place.address}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>
+                        Please choose facility
+                    </mat-error>
+                </mat-form-field>
+                <div class="w-100"></div>
+                <mat-form-field class="input">
+                    <input matInput formControlName="start" [matDatepicker]="picker" placeholder="Choose a date" readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div class="w-100"></div>
+                <div class="time-picker">
+                    <label>Choose training start time
+                        <input class="form-control focused" formControlName="startTime" [format]="24" [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+                    </label>
+                    <ngx-material-timepicker-toggle class="clock" [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                    <ngx-material-timepicker  [theme]="darkTheme" #toggleTimepicker></ngx-material-timepicker>
+                </div>
+                
+                <div class="w-100"></div>
+                <div class="form-group">
+                    <label for="training-description">Training description</label>
+                    <textarea class="form-control" formControlName="description" id="training-description" rows="3"></textarea>
+                </div>
+                <div class="w-100"></div>
+                <div class="border rounded players">
+                    <h2 class="text-center">Players invited to training</h2>
+                    <div class="row m-4 rounded">
+                        <mat-card *ngFor="let player of players;" class="card">
+                     
+                            <mat-card-header class="mb-2">       
+                                <img mat-card-sm-image class="user-img" src="assets/img/user.png">
+                                <span class="user-name">{{player.userName}}</span>
+                            </mat-card-header>
+                            <mat-card-content> 
+                                <div>
+                                    {{player.phoneNumber}}<br>
+                                    {{player.position}}
+                                </div>
+                            </mat-card-content>
+                            <mat-card-footer>
+                                <button class="m-2 border" mat-button  color="warn" (click)="removeFromInvited(player.id)">Remove</button>
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 wrapper m-4">
+            <button class="pl-4 pr-4 create-button" (click)="onSubmit()" mat-button color="primary">Create</button>
+        </div>
+
+    </form>
+</div>

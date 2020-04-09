@@ -1,0 +1,36 @@
+<div class="container ">
+    <div class="container border rounded p-4 box-shadow">
+        <h1 class="text-center">Training calendar</h1>
+        <div *ngIf="trainings.length > 0">
+            <div *ngFor="let training of trainings" class="training m-4 border rounded box-shadow" >
+                <h1 class="m-4 p-1 training-date rounded">{{training.trainingDate | date : "dd MMM yyyy"}}</h1>
+                <h3 class="ml-4 mr-4 p-1 training-date rounded">At {{training.trainingPlace.name}}, training starts
+                    at {{training.startTime.substring(0, training.startTime.length - 3)}}</h3>
+
+                <table class="table table-responsive m-4">
+                    <tr>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Participants</th>
+                        <th>People invited</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>{{training.description}} </td>
+                        <td>{{training.duration}} </td>
+                        <td>{{training.peopleAttending.length}}</td>
+                        <td>{{training.peopleInvited.length}}</td>
+                        <td>{{training.trainingStatus}}</td> 
+                        <td><a  mat-raised-button color="primary" (click)="viewTraining(training.id)">Details</a></td>
+                    </tr>
+                </table>
+               
+            </div>
+        </div>
+        <div *ngIf="trainings.length === 0" class="">
+            <h4 class="text-center">Sorry, you have no planned trainings :(</h4>
+        </div>
+    </div>
+</div>
+
