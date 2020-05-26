@@ -8,9 +8,8 @@ import { Subscription} from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    bills: [];
 
-    constructor(private testService: TestService) {
+    constructor() {
     }
 
     ngOnInit(): void {

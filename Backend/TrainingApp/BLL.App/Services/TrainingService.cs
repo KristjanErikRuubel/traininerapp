@@ -1,118 +1,117 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Contracts.BLL.App.Services;
-using DAL.App.EF;
-using Domain;
-using Domain.Identity;
-using Microsoft.EntityFrameworkCore;
+using Contracts.DAL.App;
+using Contracts.DAL.App.Repositories;
+using ee.itcollege.krruub.BLL.Base.Mappers;
+using ee.itcollege.krruub.BLL.Base.Services;
 using PublicApi.DTO.v1;
 using PublicApi.DTO.v1.Identity;
 
 namespace BLL.App.Services
 {
-    public class TrainingService : ITrainingService
+    public class TrainingService: BaseEntityService<ITrainingRepository, IAppUnitOfWork, DAL.App.DTO.Training, BLL.App.DTO.Training>,
+        ITrainingService
     {
-        private AppDbContext Ctx { get; set; }
-        private INotificationService NotificationService { get; set; }
-        private ITeamService TeamService { get; set; }
+        private INotificationService NotificationService { get;}
 
-        public TrainingService(AppDbContext context, INotificationService notificationService, ITeamService teamService)
+        public TrainingService(INotificationService notificationService, IAppUnitOfWork unitOfWork) 
+            : base(unitOfWork, new BaseBLLMapper<DAL.App.DTO.Training, BLL.App.DTO.Training>(), unitOfWork.TrainingRepository)
         {
-            TeamService = teamService;
             NotificationService = notificationService;
-            Ctx = context;
         }
-
-        /**
-         * Add new training
-         */
+        
         public async Task AddNewTraining(NewTrainingDTO newTrainingDto)
         {
-            var training = new Training()
+            var training = new DAL.App.DTO.Training()
             {
                 Description = newTrainingDto.Description,
                 Duration = newTrainingDto.Duration,
-                TrainingPlace = await Ctx.TrainingPlaces.FindAsync(Guid.Parse(newTrainingDto.TrainingPlaceId)),
+                TrainingPlace =  await ServiceUnitOfWork.TrainingPlaceRepository.FindAsync(Guid.Parse(newTrainingDto.TrainingPlaceId)),
                 Start = DateTime.Parse(newTrainingDto.Start),
                 StartTime = TimeSpan.Parse(newTrainingDto.StartTime),
-                TrainingStatus = "Created"
+                TrainingStatus = "Created",
+                CreatedBy = ServiceUnitOfWork.AccountRepository.Find(newTrainingDto.createdBy.Id),
+                AppUserId = newTrainingDto.createdBy.Id
             };
-            await Ctx.Trainings.AddAsync(training);
-            await Ctx.SaveChangesAsync();
+            ServiceRepository.Add(training);
+            await ServiceUnitOfWork.SaveChangesAsync();
             var users = newTrainingDto.PeopleInvited;
             foreach (var user in users)
             {
-                var usrInTraining = new UserInTraining()
+                var usrInTraining = new DAL.App.DTO.UserInTraining()
                 {
                     AppUserId = user.Id,
                     TrainingId = training.Id,
                     AttendingTraining = false
                 };
-                await Ctx.UsersInTrainings.AddAsync(usrInTraining);
+                ServiceUnitOfWork.UsersInTrainingRepository.Add(usrInTraining);
             }
 
             await NotificationService.SendOutNewTrainingNotifications(users, newTrainingDto.NotificationContent,
                 training);
-            await Ctx.SaveChangesAsync();
+            await ServiceUnitOfWork.SaveChangesAsync();
         }
 
         public async Task<List<TrainingDTO>> GetUserTrainings(Guid userId)
         {
-            var usersInTraining = await Ctx.UsersInTrainings.AsQueryable().Where(t => t.AppUserId.Equals(userId) && t.AttendingTraining.Equals(true))
-                .ToListAsync();
+            var usersInTraining = await ServiceUnitOfWork.UsersInTrainingRepository.FindByAppUserId(userId);
             var result = new List<TrainingDTO>();
             foreach (var usrTraining in usersInTraining)
             {
-                result.Add(await TrainingDataMapper(usrTraining.TrainingId));
+                result.Add(await MapTrainingData(usrTraining.TrainingId));
             }
             return result;
         }
 
         public async Task<TrainingDTO> GetTrainingWithDetails(Guid id)
         {
-            return await TrainingDataMapper(id);
+            return await MapTrainingData(id);
         }
 
 
-        public async Task<TrainingDTO> TrainingDataMapper(Guid Id)
+        public async Task<TrainingDTO> MapTrainingData(Guid Id)
         {
-            var training = await Ctx.Trainings.FindAsync(Id);
-            var usersInThisTraining =
-                await Ctx.UsersInTrainings.AsQueryable().Where(t => t.TrainingId == training.Id).ToListAsync();
+            var training = await ServiceRepository.FindAsync(Id);
+            var creator = await ServiceUnitOfWork.AccountRepository.FindAsync(training.AppUserId);
+            var usersInThisTraining = await ServiceUnitOfWork.UsersInTrainingRepository.FindByTrainingId(Id);
             var usersAttending = new List<UserDTO>();
             var usersInvited = new List<UserDTO>();
             foreach (var user in usersInThisTraining)
             {
                 if (user.AttendingTraining == false)
                 {
-                    var appUser = await Ctx.Users.FindAsync(user.AppUserId);
+                    var appUser = await ServiceUnitOfWork.AccountRepository.FirstOrDefaultAsync(user.AppUserId);
                     var usrDTO = new UserDTO
                     {
                         Id = appUser.Id,
                         email = appUser.Email,
                         phoneNumber = appUser.PhoneNumber,
-                        userName = appUser.FirstName + " " + appUser.LastName
+                        userName = appUser.FirstName + " " + appUser.LastName,
+                        positions = await MapPlayerPositionDtos(appUser)
                     };
                     usersInvited.Add(usrDTO);
                 }
 
-                if (user.AttendingTraining == true)
+                if (user.AttendingTraining)
                 {
-                    var appUser = await Ctx.Users.FindAsync(user.AppUserId);
+                    var appUser = await ServiceUnitOfWork.AccountRepository.FirstOrDefaultAsync(user.AppUserId);
+               
                     var usrDTO = new UserDTO
                     {
                         Id = appUser.Id,
                         email = appUser.Email,
                         phoneNumber = appUser.PhoneNumber,
-                        userName = appUser.FirstName + " " + appUser.LastName
+                        userName = appUser.FirstName + " " + appUser.LastName,
+                        positions = await MapPlayerPositionDtos(appUser)
                     };
-                    usersAttending.Add(usrDTO);
+                    usersInvited.Add(usrDTO);
                 }
             }
 
-            var trainingPlace = await Ctx.TrainingPlaces.FindAsync(training.TrainingPlaceId);
+            var trainingPlace = await ServiceUnitOfWork.TrainingPlaceRepository.FirstOrDefaultAsync(training.TrainingPlaceId);
             var trainingPlaceDto = new TrainingPlaceDTO
             {
                 Id = trainingPlace.Id,
@@ -127,7 +126,7 @@ namespace BLL.App.Services
                 training.TrainingStatus = "Confirmed";
             }
 
-            await Ctx.SaveChangesAsync();
+            await ServiceUnitOfWork.SaveChangesAsync();
             var trainingDto = new TrainingDTO
             {
                 Id = training.Id,
@@ -138,9 +137,31 @@ namespace BLL.App.Services
                 TrainingStatus = training.TrainingStatus,
                 PeopleInvited = usersInvited,
                 PeopleAttending = usersAttending,
-                StartTime = training.StartTime
+                StartTime = training.StartTime,
+                CreatedBy = new UserDTO()
+                {
+                    userName = creator.FirstName + " " + creator.LastName,
+                    // email = creator.Email,
+                    // phoneNumber = creator.PhoneNumber
+                }
             };
             return trainingDto;
+        }
+
+        public async Task<List<PlayerPositionDTO>> MapPlayerPositionDtos(DAL.App.DTO.Identity.AppUser user)
+        {
+            var databasePositions = await ServiceUnitOfWork.PlayerPostionRepository.GetUserPositions(user.Id);
+            var positions = new List<PlayerPositionDTO>();
+            foreach (var position in databasePositions)
+            {
+                var pos = new PlayerPositionDTO()
+                {
+                    Position = position.PersonPosition
+                };
+                positions.Add(pos);
+            }
+
+            return positions;
         }
     }
 }

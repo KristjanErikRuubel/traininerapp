@@ -1,23 +1,24 @@
 ﻿using System;
-using Contracts.DAL.Base;
-using DAL.Base;
+using ee.itcollege.krruub.Contracts.DAL.Base;
 using Domain.Identity;
 
 namespace Domain
 {
-    public class Notification : Notification<Guid>, IDomainEntity
+    public class Notification : Notification<Guid>, IDomainEntityBaseMetadata
     {
     }
-    public class Notification<TKey>  : DomainEntity<TKey>
+    public class Notification<TKey>  : IDomainEntityBaseMetadata<Guid>
         where TKey : struct, IEquatable<TKey>
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
-        public virtual Guid AppUserId { get; set; }
-        public virtual AppUser Reciver { get; set; }
+        public string? Title { get; set; }
+        public string? Content { get; set; }
+        public string? NotificationType { get; set; }
+        public virtual Guid? AppUserId { get; set; }
+        public virtual AppUser? Reciver { get; set; }
         public bool Recived { get; set; }
         public Guid? TrainingId { get; set; }
         public Training? Training { get; set; }
         public virtual NotificationAnswer? NotificationAnswer { get; set; }
+        public Guid Id { get; set; }
     }
 }

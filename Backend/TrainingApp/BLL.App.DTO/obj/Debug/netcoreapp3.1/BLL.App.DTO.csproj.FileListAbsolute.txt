@@ -1,0 +1,9 @@
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\bin\Debug\netcoreapp3.1\BLL.App.DTO.deps.json
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\bin\Debug\netcoreapp3.1\BLL.App.DTO.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\bin\Debug\netcoreapp3.1\BLL.App.DTO.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.AssemblyInfoInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.AssemblyInfo.cs
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\BLL.App.DTO\obj\Debug\netcoreapp3.1\BLL.App.DTO.pdb

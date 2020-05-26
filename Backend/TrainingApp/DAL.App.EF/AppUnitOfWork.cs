@@ -1,8 +1,8 @@
-﻿using System;
-using Contracts.DAL.App;
+﻿using Contracts.DAL.App;
 using Contracts.DAL.App.Repositories;
 using DAL.App.EF.Repositories;
-using DAL.Base.EF;
+using ee.itcollege.krruub.DAL.Base;
+using ee.itcollege.krruub.DAL.Base.EF;
 
 namespace DAL.App.EF
 {
@@ -11,24 +11,36 @@ namespace DAL.App.EF
         public AppUnitOfWork(AppDbContext uowDbContext) : base(uowDbContext)
         {
         }
-        
-        public IBillRepository Bills =>
+
+        public IAccountRepository AccountRepository =>
+            GetRepository<IAccountRepository>(() => new AccountRepository(UOWDbContext));
+
+        public IUserInTrainingRepository UsersInTrainingRepository =>
+            GetRepository<IUserInTrainingRepository>(() => new UserInTrainingRepository(UOWDbContext));
+
+        public IPlayerPositionRepository PlayerPostionRepository =>
+            GetRepository<IPlayerPositionRepository>(() => new PlayerPositionRepository(UOWDbContext));
+
+        public ITrainingInBillRepository TrainingInBillRepository =>
+            GetRepository<ITrainingInBillRepository>(() => new TrainingInBillRepository(UOWDbContext));
+
+        public IBillRepository BillRepository =>
             GetRepository<IBillRepository>(() => new BillRepository(UOWDbContext));
-        public INotificationRepository Notifications =>
+        public INotificationRepository NotificationRepository =>
             GetRepository<INotificationRepository>(() => new NotificationRepository(UOWDbContext));
 
         public INotificationAnswerRepository NotificationAnswerRepository =>
-            GetRepository<INotificationAnswerRepository>(() => new INotificationAnswerRepository());
+            GetRepository<INotificationAnswerRepository>(() => new NotificationAnswerRepository(UOWDbContext));
 
-        public ITrainingRepository Trainings =>
+        public ITrainingRepository TrainingRepository =>
             GetRepository<ITrainingRepository>(() => new TrainingRepository(UOWDbContext));
-        public ITeamRepository Teams =>
+        public ITeamRepository TeamRepository =>
             GetRepository<ITeamRepository>(() => new TeamRepository(UOWDbContext));
-        public IPersonInTrainingRepository PersonInTraining =>
-            GetRepository<IPersonInTrainingRepository>(() => new PersonInTrainingRepository(UOWDbContext));
-        
-        public ITrainingPlaceRepository TrainingPlaces =>
+        public ITrainingPlaceRepository TrainingPlaceRepository =>
             GetRepository<ITrainingPlaceRepository>(() => new TrainingPlaceRepository(UOWDbContext));
+        
+        
+
         
     }
 }

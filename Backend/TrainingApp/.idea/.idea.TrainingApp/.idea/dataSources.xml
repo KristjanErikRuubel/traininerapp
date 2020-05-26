@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="training-app@localhost" uuid="31b7b0ed-f5e3-4c59-ac35-73006f7129ca">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/training-app</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="mssqlakaver" uuid="3b0cd9ae-e15c-40be-aa2a-bce0d40ec684">
+    <data-source source="LOCAL" name="training-app@localhost" uuid="64ef9f77-b98d-4d96-bf64-f232b60bac7e">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://alpha.akaver.com:1533;database=krruub_2020</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://localhost:5434;database=training-app</jdbc-url>
     </data-source>
   </component>
 </project>

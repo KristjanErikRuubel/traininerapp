@@ -30,6 +30,7 @@ dotnet aspnet-codegenerator controller -name PersonInvitedToTrainingController  
 dotnet aspnet-codegenerator controller -name TeamController  -actions -m Team   -dc AppDbContext -outDir ApiControllers -api --useAsyncActions  -f
 dotnet aspnet-codegenerator controller -name TrainingController  -actions -m Training   -dc AppDbContext -outDir ApiControllers -api --useAsyncActions  -f
 dotnet aspnet-codegenerator controller -name UserRoleInTeamController  -actions -m TrainingPlace -dc AppDbContext -outDir ApiControllers -api --useAsyncActions  -f
+dotnet aspnet-codegenerator controller -name PlayerPositionController  -actions -m PlayerPosition -dc AppDbContext -outDir ApiControllers -api --useAsyncActions  -f
 ~~~
 Aspnet controllers
 ~~~
@@ -42,4 +43,5 @@ dotnet aspnet-codegenerator controller -name PersonInvitedToTrainingController  
 dotnet aspnet-codegenerator controller -name TeamController  -actions -m Team   -dc AppDbContext -outDir Controllers --useDefaultLayout --useAsyncActions --referenceScriptLibraries -f
 dotnet aspnet-codegenerator controller -name TrainingController  -actions -m Training   -dc AppDbContext -outDir Controllers --useDefaultLayout --useAsyncActions --referenceScriptLibraries -f
 dotnet aspnet-codegenerator controller -name TrainingPlaceController  -actions -m TrainingPlace   -dc AppDbContext -outDir Controllers --useDefaultLayout --useAsyncActions --referenceScriptLibraries -f
+dotnet aspnet-codegenerator controller -name PlayerPositionController  -actions -m PlayerPosition -dc AppDbContext -outDir Controllers --useDefaultLayout --useAsyncActions --referenceScriptLibraries -f
 ~~~

@@ -9,19 +9,17 @@ import {AuthService} from '../../services/auth.service';
 export class LoginBarComponent implements OnInit {
 
     isAuthenticated: any;
-
+    user;
     constructor(private authService: AuthService) {
     }
 
     ngOnInit(): void {
+        this.authService.currentUser.subscribe(data => this.user = data);
         this.isAuthenticated = () => {
-            const currentUser = this.authService.currentUserValue;
-            return !!currentUser;
-        }
+            return !!this.user;
+        };
     }
 
-    
-    
     logout() {
         this.authService.logOut();
         this.isAuthenticated = false;

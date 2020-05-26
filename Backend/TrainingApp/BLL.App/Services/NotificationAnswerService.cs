@@ -2,53 +2,61 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Contracts.BLL.App.Services;
-using DAL.App.EF;
-using Domain;
+using Contracts.DAL.App;
+using Contracts.DAL.App.Repositories;
+
+using ee.itcollege.krruub.BLL.Base.Mappers;
+using ee.itcollege.krruub.BLL.Base.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.EntityFrameworkCore;
 using PublicApi.DTO.v1;
-using PublicApi.DTO.v1.Identity;
+
 
 namespace BLL.App.Services
 {
-    public class NotificationAnswerService : INotificationAnswerService
+    public class NotificationAnswerService : BaseEntityService<INotificationAnswerRepository, IAppUnitOfWork, DAL.App.DTO.NotificationAnswer, BLL.App.DTO.NotificationAnswer>, INotificationAnswerService
     {
-        private AppDbContext ctx { get; set; }
         private IEmailSender _sender { get; set; }
 
-        public NotificationAnswerService(AppDbContext context)
+        public NotificationAnswerService(IAppUnitOfWork unitOfWork) : base(unitOfWork, new IdentityMapper<DAL.App.DTO.NotificationAnswer, BLL.App.DTO.NotificationAnswer>(), unitOfWork.NotificationAnswerRepository)
         {
-            ctx = context;
         }
 
         public async Task AnswerNotification( NotificationAnswerDTO notificationAnswerDto)
         {
-            var notificationAnswer = new NotificationAnswer
+            var notificationAnswer = new DAL.App.DTO.NotificationAnswer
             {
                 Attending = notificationAnswerDto.Coming,
                 Content = notificationAnswerDto.Content,
                 NotificationId = Guid.Parse(notificationAnswerDto.NotificationId),
             };
-            var notification = await ctx.Notifications.FindAsync(Guid.Parse(notificationAnswerDto.NotificationId));
-
+            var notification = await ServiceUnitOfWork.NotificationRepository.FindAsync(Guid.Parse(notificationAnswerDto.NotificationId));
             notification.Recived = true;
-            
-            var userInTraining = ctx.UsersInTrainings.FromSqlRaw("Select * From  UsersInTrainings where TrainingId = '" + notificationAnswerDto.TrainingId + "' and  AppUserId = '" + notificationAnswerDto.AppUserId + "'").First();
-
-            if (notificationAnswerDto.Coming == true)
+            var userInTraining =
+                await ServiceUnitOfWork.UsersInTrainingRepository.FindByAppUserIdAndTrainingId(Guid.Parse(notificationAnswerDto.AppUserId),
+                    Guid.Parse(notificationAnswerDto.TrainingId));
+            if (notificationAnswerDto.Coming)
             {
                 userInTraining.AttendingTraining = true;
             }
-            await ctx.NotificationAnswers.AddAsync(notificationAnswer);
-            ctx.UsersInTrainings.Update(userInTraining);
-            await ctx.SaveChangesAsync();
+            ServiceRepository.Add(notificationAnswer);
+            await ServiceUnitOfWork.SaveChangesAsync();
         }
 
         public async Task ChangeAnswer(NotificationAnswerDTO notificationAnswerDto)
         {
-          
+            var previousAnswer = await ServiceRepository.FirstOrDefaultAsync(notificationAnswerDto.id);
+            previousAnswer.Attending = notificationAnswerDto.Coming;
+            previousAnswer.Content = notificationAnswerDto.Content;
+            var userInTraining =
+                await ServiceUnitOfWork.UsersInTrainingRepository.FindByAppUserIdAndTrainingId(
+                    Guid.Parse(notificationAnswerDto.AppUserId),
+                    Guid.Parse(notificationAnswerDto.TrainingId));
+            if (notificationAnswerDto.Coming)
+            {
+                userInTraining.AttendingTraining = true;
+            }
+            ServiceRepository.Add(previousAnswer);
+            await ServiceUnitOfWork.SaveChangesAsync();
         }
-
-
-}
+    }
 }

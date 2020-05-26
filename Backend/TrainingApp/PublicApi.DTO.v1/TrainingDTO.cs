@@ -15,5 +15,7 @@ namespace PublicApi.DTO.v1
         public ICollection<UserDTO> PeopleInvited { get; set; }
         public ICollection<UserDTO> PeopleAttending { get; set; }
         public string Description { get; set; }
+        
+        public UserDTO CreatedBy { get; set; }
     }
 }

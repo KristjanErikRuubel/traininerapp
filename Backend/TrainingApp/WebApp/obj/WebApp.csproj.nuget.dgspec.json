@@ -4,14 +4,14 @@
     "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj": {
+    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj",
-        "projectName": "BLL.App",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj",
+        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj",
+        "projectName": "BLL.App.DTO",
+        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj",
         "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\obj\\",
+        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -24,23 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj"
-              },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
-              },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj"
-              },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj"
-              },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -52,9 +36,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNetCore.Identity.UI": {
+            "ee.itcollege.krruub.BLL.Base": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -76,14 +60,14 @@
         }
       }
     },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj": {
+    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj",
-        "projectName": "BLL.Base",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj",
+        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj",
+        "projectName": "BLL.App",
+        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\BLL.App.csproj",
         "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\obj\\",
+        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -97,14 +81,20 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj"
+              },
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.App\\Contracts.BLL.App.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.App\\Contracts.BLL.App.csproj"
               },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\Contracts.BLL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\Contracts.BLL.Base.csproj"
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
               },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj"
+              },
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj"
               }
             }
           }
@@ -117,6 +107,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "ee.itcollege.krruub.BLL.Base": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "ee.itcollege.krruub.Contracts.BLL.Base": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -157,8 +161,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj"
+              },
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj"
               },
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj"
@@ -177,66 +184,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\Contracts.BLL.Base.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\Contracts.BLL.Base.csproj",
-        "projectName": "Contracts.BLL.Base",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\Contracts.BLL.Base.csproj",
-        "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.Base\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.0-preview.2.20120.8, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -277,63 +224,16 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj"
               },
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj": {
+                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj"
               }
             }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
-        "projectName": "Contracts.DAL.Base",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
-        "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -387,9 +287,6 @@
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
               },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\DAL.Base.EF.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\DAL.Base.EF.csproj"
-              },
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj"
               }
@@ -428,6 +325,14 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "ee.itcollege.krruub.DAL.Base": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "ee.itcollege.krruub.DAL.Base.EF": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -449,14 +354,14 @@
         }
       }
     },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\DAL.Base.EF.csproj": {
+    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\DAL.Base.EF.csproj",
-        "projectName": "DAL.Base.EF",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\DAL.Base.EF.csproj",
+        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj",
+        "projectName": "DAL.App.DTO",
+        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\DAL.App.DTO.csproj",
         "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base.EF\\obj\\",
+        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL\\DAL.App.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -469,14 +374,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
-              },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -488,65 +386,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "ee.itcollege.krruub.Contracts.DAL.Base": {
               "target": "Package",
-              "version": "[5.0.0-preview.2.20120.8, )"
+              "version": "[1.0.0, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj",
-        "projectName": "DAL.Base",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj",
-        "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
           "imports": [
             "net461",
             "net462",
@@ -586,11 +430,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.Base\\DAL.Base.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -609,74 +449,14 @@
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[4.7.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj",
-        "projectName": "Identity",
-        "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj",
-        "packagesPath": "C:\\Users\\kristjan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\kristjan\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
-            "Microsoft.Extensions.Identity.Stores": {
+            "ee.itcollege.krruub.Contracts.DAL.Base": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[1.0.0, )"
             },
-            "Microsoft.IdentityModel.Tokens": {
+            "ee.itcollege.krruub.Identity": {
               "target": "Package",
-              "version": "[6.5.0, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -782,9 +562,6 @@
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj": {
-                "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj"
-              },
               "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj": {
                 "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj"
               }
@@ -820,6 +597,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "Microsoft.AspNetCore.TestHost": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Microsoft.Bcl.HashCode": {
               "target": "Package",
               "version": "[1.1.0, )"
@@ -844,6 +625,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -855,6 +640,10 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
             }
           },
           "imports": [

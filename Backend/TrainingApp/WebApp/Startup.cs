@@ -1,12 +1,14 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using BLL.App;
 using BLL.App.Services;
+using Contracts.BLL.App;
 using Contracts.BLL.App.Services;
-using Contracts.DAL.Base;
+using Contracts.DAL.App;
 using DAL.App.EF;
-using Domain;
 using Domain.Identity;
+using ee.itcollege.krruub.Contracts.DAL.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -35,23 +37,17 @@ namespace WebApp
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("MsSqlConnection")));
+                    Configuration.GetConnectionString("MsSqlLocalDbConnection")));
+
             
             services.AddScoped<IUserNameProvider, UserNameProvider>();
-            services.AddScoped<ITeamService, TeamService>();
-            services.AddScoped<ITrainingService, TrainingService>();
-            services.AddScoped<INotificationService, NotificationService>();
-            services.AddScoped<INotificationAnswerService, NotificationAnswerService>();
-            services.AddScoped<IAccountService, AccountService>();
-            // app services
-            // services.AddScoped<IBaseRepositoryProvider, BaseRepositoryProvider<AppDbContext>>();
-            // services.AddSingleton<IBaseRepositoryFactory<AppDbContext>, AppRepositoryFactory>();
-            // services.AddScoped<IAppUnitOfWork, AppUnitOfWork>();
-            //
-            // services.AddSingleton<IBaseServiceFactory<IAppUnitOfWork>, AppServiceFactory>();
-            // services.AddScoped<IBaseServiceProvider, BaseServiceProvider<IAppUnitOfWork>>();
-            // services.AddScoped<IAppBLL, AppBLL>();
+            services.AddScoped<IAppUnitOfWork, AppUnitOfWork>();
+            services.AddScoped<IAppBLL, AppBLL>();
+            services.AddScoped<IPlayerPositionService, PlayerPositionService>();
+    
             
+            // app services
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -60,15 +56,12 @@ namespace WebApp
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredUniqueChars = 0;
                 options.Password.RequireNonAlphanumeric = false;
-
             });
             services.AddSingleton<IEmailSender, EmailSender>();
-
             services
                 .AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-
             services.AddControllersWithViews();
             services.AddRazorPages().AddNewtonsoftJson(options => 
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -108,6 +101,11 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            using var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope();
+            using var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<AppRole>>();
+            CreateRoles(roleManager);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -136,40 +134,25 @@ namespace WebApp
                 endpoints.MapRazorPages();
             });
         }
-        private static void UpdateDatabase(IApplicationBuilder app, IWebHostEnvironment env,
-            IConfiguration Configuration)
+       
+        private void CreateRoles( RoleManager<AppRole> roleManager)
         {
-            // give me the scoped services (everyhting created by it will be closed at the end of service scope life).
-            using var serviceScope = app.ApplicationServices
-                .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope();
+            //initializing custom roles 
+            string[] roleNames = { "Admin", "Basic user", "Manager" };
 
-            using var ctx = serviceScope.ServiceProvider.GetService<AppDbContext>();
-            using var userManager = serviceScope.ServiceProvider.GetService<UserManager<AppUser>>();
-            using var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<AppRole>>();
-
-            if (Configuration["AppDataInitialization:DropDatabase"] == "True")
+            foreach (var roleName in roleNames)
             {
-                Console.WriteLine("DropDatabase");
-                DAL.App.EF.Helpers.DataInitializers.DeleteDatabase(ctx);
-            }
-
-            if (Configuration["AppDataInitialization:MigrateDatabase"] == "True")
-            {
-                Console.WriteLine("MigrateDatabase");
-                DAL.App.EF.Helpers.DataInitializers.MigrateDatabase(ctx);
-            }
-
-            if (Configuration["AppDataInitialization:SeedIdentity"] == "True")
-            {
-                Console.WriteLine("SeedIdentity");
-                DAL.App.EF.Helpers.DataInitializers.SeedIdentity(userManager, roleManager);
-            }
-
-            if (Configuration.GetValue<bool>("AppDataInitialization:SeedData"))
-            {
-                Console.WriteLine("SeedData");
-                DAL.App.EF.Helpers.DataInitializers.SeedData(ctx);
+                var role = roleManager.FindByNameAsync(roleName).Result;
+                if (role == null)
+                {
+                    role = new AppRole();
+                    role.Name = roleName;
+                    var result = roleManager.CreateAsync(role).Result;
+                    if (!result.Succeeded)
+                    {
+                        throw new ApplicationException("Role creation failed!");
+                    }
+                }
             }
         }
     }

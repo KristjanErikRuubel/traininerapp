@@ -20,5 +20,4 @@ export class AuthGuardService {
         this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
         return false;
     }
-    
 }

@@ -10,6 +10,5 @@ namespace Domain.Identity
     public class AppRole<TKey> : IdentityRole<TKey> 
         where TKey : IEquatable<TKey>
     {
-        public string Role;
     }
 }

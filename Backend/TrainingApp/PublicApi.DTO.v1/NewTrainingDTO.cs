@@ -17,6 +17,7 @@ namespace PublicApi.DTO.v1
         
         public string TeamId { get; set; }
         public string Cost { get; set; }
+        public UserDTO createdBy { get; set; }
         public override string ToString()
         {
             return Duration + " " + Start + " " + StartTime + " " + TrainingPlaceId + " " + Description + " " +

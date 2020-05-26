@@ -1,43 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TeamService} from '../../services/team.service';
 
-[{
-    name: 'Tiit Sokk',
-    email: 'tiit@sokk.ee',
-    team: 'FC Sominum',
-    phoneNr: '52712312'
-},
-    {
-        name: 'Tiit Sokk',
-        email: 'tiit@sokk.ee',
-        team: 'FC Sominum',
-        phoneNr: '52712312'
-    },
-    {
-        name: 'Tiit Sokk',
-        email: 'tiit@sokk.ee',
-        team: 'FC Sominum',
-        phoneNr: '52712312'
-    },
-    {
-        name: 'Tiit Sokk',
-        email: 'tiit@sokk.ee',
-        team: 'FC Sominum',
-        phoneNr: '52712312'
-    }, {
-    name: 'Tiit Sokk',
-    email: 'tiit@sokk.ee',
-    team: 'FC Sominum',
-    phoneNr: '52712312'
-},
-    {
-        name: 'Tiit Sokk',
-        email: 'tiit@sokk.ee',
-        team: 'FC Sominum',
-        phoneNr: '52712312'
-    }
-];
-
 @Component({
     selector: 'app-manage-team',
     templateUrl: './manage-team.component.html',
@@ -53,8 +16,11 @@ export class ManageTeamComponent implements OnInit {
     ngOnInit(): void {
         this.teamService.getPlayersInTeam().subscribe(data => this.players = data);
     }
-    removeFromInvited(id : string){
-        this.players = this.players.filter(pl => pl.id != id);
+    remove(player){
+        this.players = this.players.filter(pl => pl.id !== player.id);
+        this.teamService.removePlayerFromTeam(player).subscribe(
+            data => console.log(data)
+        );
     }
 
 

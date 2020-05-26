@@ -1,14 +1,11 @@
 <mat-toolbar class="toolbar">
-  <mat-toolbar-row>
-    <a mat-button [routerLink]="'/home'"><span class="material-icons">sports_soccer</span>FootballTrainer</a>
-    <span class="spacer"></span>
-    <div>
-      <a mat-raised-button class="m-2" [routerLink]="'/home'"> Home </a>
-      <a mat-raised-button class="m-2" [routerLink]="'/training/create'"> Create new training </a>
-      <a mat-raised-button class="m-2" [routerLink]="'/notification/create'"> Create new notification </a>
-      <a mat-raised-button class="m-2" [routerLink]="'/manage'"> Manage team </a>
-    </div>
-    <span class="spacer"></span>
-    <app-login-bar class="justify-content-end"></app-login-bar>
+  <mat-toolbar-row class="w-100">
+      <div class="container w-100 row">
+          <a mat-button [routerLink]="'/home'" class=""><span class="material-icons">sports_soccer</span>FootballTrainer</a>
+          <div class="login">
+              <app-login-bar></app-login-bar>
+          </div>
+      </div>
   </mat-toolbar-row>
 </mat-toolbar>
+

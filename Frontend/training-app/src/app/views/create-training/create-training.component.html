@@ -9,7 +9,6 @@
                         Please provide training duration
                     </mat-error>
                 </mat-form-field>
-                <div class="w-100"></div>
                 <mat-form-field  class="input">
                     <mat-label>Training place</mat-label>
                     <mat-select formControlName="place">
@@ -21,18 +20,17 @@
                         Please choose facility
                     </mat-error>
                 </mat-form-field>
-                <div class="w-100"></div>
                 <mat-form-field class="input">
                     <input matInput formControlName="start" [matDatepicker]="picker" placeholder="Choose a date" readonly>
                     <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-                <div class="w-100"></div>
                 <div class="time-picker">
-                    <label>Choose training start time
-                        <input class="form-control focused" formControlName="startTime" [format]="24" [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
-                    </label>
-                    <ngx-material-timepicker-toggle class="clock" [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                    <label for="startTime"> Training start</label>
+                    <span>
+                        <input id="startTime" class="form-control w-50" formControlName="startTime" [format]="24" [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+                        <ngx-material-timepicker-toggle class="clock" [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                    </span>
                     <ngx-material-timepicker  [theme]="darkTheme" #toggleTimepicker></ngx-material-timepicker>
                 </div>
                 
@@ -66,7 +64,7 @@
             </div>
         </div>
         <div class="w-100 wrapper m-4">
-            <button class="pl-4 pr-4 create-button" (click)="onSubmit()" mat-button color="primary">Create</button>
+            <button class="pl-4 pr-4 create-button" (click)="onSubmit()" mat-raised-button color="primary">Create</button>
         </div>
 
     </form>

@@ -32,6 +32,10 @@ import { ViewNotificationComponent } from './views/view-notification/view-notifi
 import { NotificationAnswerComponent } from './modules/notification-answer/notification-answer.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import { BillComponent } from './views/bill/bill.component';
+import { CreateBillComponent } from './views/create-bill/create-bill.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import {MatRadioModule} from '@angular/material/radio';
     CreateNotificationComponent,
     ViewNotificationComponent,
     NotificationAnswerComponent,
-    FooterComponent
+    FooterComponent,
+    BillComponent,
+    CreateBillComponent
   ],
     imports: [
         NgxMaterialTimepickerModule,
@@ -70,6 +76,8 @@ import {MatRadioModule} from '@angular/material/radio';
         MatDatepickerModule,
         FormsModule,
         MatRadioModule,
+        MatSidenavModule,
+        MatMenuModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

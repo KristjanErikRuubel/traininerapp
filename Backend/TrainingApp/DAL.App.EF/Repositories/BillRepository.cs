@@ -3,28 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Contracts.DAL.App.Repositories;
-using DAL.Base.EF.Repositories;
-using Domain;
+using ee.itcollege.krruub.DAL.Base.EF.Mappers;
+using ee.itcollege.krruub.DAL.Base.EF.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Bill = DAL.App.DTO.Bill;
 
 namespace DAL.App.EF.Repositories
 {
-    public class BillRepository  : EFBaseRepository<Bill, AppDbContext>, IBillRepository
+    public class BillRepository  : EFBaseRepository<AppDbContext, Domain.Bill, DAL.App.DTO.Bill>, IBillRepository
     {
-        public BillRepository(AppDbContext dbContext) : base(dbContext)
+        public BillRepository(AppDbContext dbContext) : base(dbContext, new BaseDALMapper<Domain.Bill, DAL.App.DTO.Bill>())
         {
         }
-        public async Task<IEnumerable<Bill>> AllAsync(Guid? userId = null)
+        public async Task<IEnumerable< DAL.App.DTO.Bill>> AllAsync(Guid? userId = null)
         {
-            if (userId == null)
-            {
-                return await base.AllAsync(); // base is not actually needed, using it for clarity
-            }
-
-            return await RepoDbSet.Where(o => o.Id == userId).ToListAsync();
+            return (await RepoDbSet.Where(o => o.Id == userId).ToListAsync()).Select(domainBill => Mapper.Map(domainBill));
         }
 
-        public async Task<Bill> FirstOrDefaultAsync(Guid id, Guid? userId = null)
+        public async Task< DAL.App.DTO.Bill> FirstOrDefaultAsync(Guid id, Guid? userId = null)
         {
             var query = RepoDbSet.Where(a => a.Id == id).AsQueryable();
             if (userId != null)
@@ -32,7 +28,7 @@ namespace DAL.App.EF.Repositories
                 query = query.Where(a => a.Id == userId);
             }
 
-            return await query.FirstOrDefaultAsync();
+            return Mapper.Map(await query.FirstOrDefaultAsync());
         }
 
         public async Task<bool> ExistsAsync(Guid id, Guid? userId = null)
@@ -49,6 +45,11 @@ namespace DAL.App.EF.Repositories
         {
             var bill = await FirstOrDefaultAsync(id, userId);
             base.Remove(bill);
+        }
+
+        public async Task<IEnumerable<Bill>> GetUserBills(Guid userId)
+        {
+            return (await RepoDbSet.AsQueryable().Where(b => b.AppUserId.Equals(userId)).ToListAsync()).Select(domainBill => Mapper.Map(domainBill));
         }
     }
 }

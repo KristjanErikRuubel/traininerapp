@@ -1,66 +1,80 @@
-<mat-card class="container mt-4">
+<mat-card class="registerForm mt-4">
     <mat-card-content>
-        <form [formGroup]="registerFrom" class="registerForm">
-            <h2>Register</h2>
+        <form [formGroup]="registerFrom" class="">
+            <h1>Register</h1>
             <mat-error *ngIf="registerFromInValid">
                 Register form is not valid
             </mat-error>
-            <mat-form-field class="full-width-input m-4">
-                <input matInput placeholder="Email" formControlName="email" required>
-                <mat-error>
-                    Please provide a valid email address
-                </mat-error>
-            </mat-form-field>       
-            <mat-form-field class="full-width-input m-4">
-                <input matInput placeholder="First name" formControlName="firstName" required>
-                <mat-error>
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="full-width-input m-4">
-                <input matInput placeholder="Last name" formControlName="lastName" required>
-                <mat-error>
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="full-width-input m-4">
-                <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
-                <mat-error>
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="full-width-input m-4">
-                <input matInput type="password" placeholder="Password" formControlName="password" required>
-                <mat-error>
-                    Please provide a valid password
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="full-width-input m-4">
-                <input matInput type="password" placeholder="Confirm password" formControlName="password2" required>
-                <mat-error>
-                    Please provide a valid password
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="m-4">
-                <mat-label>Team</mat-label>
-                <mat-select formControlName="team">
-                    <mat-option *ngFor="let team of teams" [value]="team.id">
-                        {{team.name}}
-                    </mat-option>
-                </mat-select>
-                <mat-error>
-                    Please choose team
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="m-4">
-                <mat-label>Position</mat-label>
-                <mat-select formControlName="role">
-                    <mat-option *ngFor="let position of positions" [value]="position">
-                        {{position}}
-                    </mat-option>
-                </mat-select>
-                <mat-error>
-                    Please choose position
-                </mat-error>
-            </mat-form-field>
-            <button mat-raised-button color="primary" (click)="onSubmit()">Register</button>
+            <span class="">
+                Please fill in this form to create an account.
+            </span>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width-input m-4">
+                        <input matInput placeholder="Email" formControlName="email" required>
+                        <mat-error>
+                            Please provide a valid email address
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width-input m-4">
+                        <input matInput placeholder="First name" formControlName="firstName" required>
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width-input m-4">
+                        <input matInput placeholder="Last name" formControlName="lastName" required>
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width-input m-4">
+                        <input matInput type="password" placeholder="Password" formControlName="password" required>
+                        <mat-error>
+                            Please provide a valid password
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width-input m-4">
+                        <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="m-4">
+                        <mat-label>Team</mat-label>
+                        <mat-select formControlName="team">
+                            <mat-option *ngFor="let team of teams" [value]="team.id">
+                                {{team.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>
+                            Please choose team
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="m-4">
+                        <mat-label>Position</mat-label>
+                        <mat-select formControlName="position" multiple>
+                            <mat-option *ngFor="let position of positions" [value]="position">
+                                {{position}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>
+                            Please choose position
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="m-4">
+                        <mat-label>Role</mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option *ngFor="let role of roles" [value]="role">
+                                {{role}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>
+                            Please choose role
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button mat-raised-button color="secondary" id="register-button" (click)="onSubmit()">Register</button>
         </form>
     </mat-card-content>
 </mat-card>

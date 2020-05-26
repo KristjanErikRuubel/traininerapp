@@ -25,5 +25,8 @@ export class UserService {
       return this.http.post("", user);
   }
   
-  
+  getPositions(){
+      return this.http.get("https://localhost:5001/api/playerposition");
+      
+  }
 }

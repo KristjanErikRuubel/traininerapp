@@ -7,12 +7,15 @@ import {AuthService} from './auth.service';
 })
 export class NotificationService {
     user: any;
+
     constructor(private http: HttpClient,
-                private authService: AuthService) {}
+                private authService: AuthService) {
+    }
+
     getNotificationsForUser() {
         this.authService.currentUser.subscribe(data => this.user = data);
-        return this.http.post('https://localhost:5001/api/account/getusernotifications', JSON.stringify(this.user),
-            {headers: new HttpHeaders({'Content-Type': 'application/json'})});
+        console.log(this.user);
+        return this.http.get('https://localhost:5001/api/account/getusernotifications/' + this.user.id);
     }
 
     createNotification(notification: { players: any; description: any; title: any }) {
@@ -23,8 +26,8 @@ export class NotificationService {
     async answer(answerForm: any) {
         await this.authService.currentUser.subscribe(data => this.user = data);
         console.log(this.user);
-        if (answerForm.answer == "1") {
-            let form = {
+        if (answerForm.answer === '1') {
+            const form = {
                 coming: true,
                 notificationId: answerForm.notificationId,
                 content: answerForm.content,
@@ -35,8 +38,8 @@ export class NotificationService {
             return this.http.post('https://localhost:5001/api/notificationanswer', form,
                 {headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe();
         }
-        if (answerForm.answer == "2") {
-            let form = {
+        if (answerForm.answer === '2') {
+            const form = {
                 coming: false,
                 notificationId: answerForm.notificationId,
                 content: answerForm.content,
@@ -52,8 +55,6 @@ export class NotificationService {
 
     getAllUserNotifications() {
         this.authService.currentUser.subscribe(data => this.user = data);
-        return this.http.post('https://localhost:5001/api/account/getallusernotifications', JSON.stringify(this.user),
-            {headers: new HttpHeaders({'Content-Type': 'application/json'})});
-        
+        return this.http.get('https://localhost:5001/api/account/getallusernotifications/' + this.user.id);
     }
 }

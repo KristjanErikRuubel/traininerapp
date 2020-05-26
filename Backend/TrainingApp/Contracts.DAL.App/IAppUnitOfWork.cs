@@ -1,18 +1,26 @@
 ﻿using Contracts.DAL.App.Repositories;
-using Contracts.DAL.Base;
+using ee.itcollege.krruub.Contracts.DAL.Base;
 
 namespace Contracts.DAL.App
 {
     public interface IAppUnitOfWork : IBaseUnitOfWork
     {
-        IBillRepository Bills { get; }
+        IBillRepository BillRepository { get; }
         
-        INotificationRepository Notifications { get; }
+        INotificationRepository NotificationRepository { get; }
         
         INotificationAnswerRepository NotificationAnswerRepository { get; }
         
-        ITrainingRepository Trainings { get; }
+        ITrainingRepository TrainingRepository { get; }
+        
+        ITeamRepository TeamRepository { get; }
 
-        ITrainingPlaceRepository TrainingPlaces { get; }
+        ITrainingPlaceRepository TrainingPlaceRepository { get; }
+        IAccountRepository AccountRepository { get; }
+        IUserInTrainingRepository UsersInTrainingRepository { get; }
+        
+        IPlayerPositionRepository PlayerPostionRepository { get; }
+        
+        ITrainingInBillRepository TrainingInBillRepository { get;  }
     }
 }

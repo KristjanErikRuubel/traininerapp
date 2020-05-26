@@ -37,6 +37,14 @@
         "System.ComponentModel.Annotations": {
           "target": "Package",
           "version": "[4.7.0, )"
+        },
+        "ee.itcollege.krruub.Contracts.DAL.Base": {
+          "target": "Package",
+          "version": "[1.0.0, )"
+        },
+        "ee.itcollege.krruub.Identity": {
+          "target": "Package",
+          "version": "[1.0.0, )"
         }
       },
       "imports": [

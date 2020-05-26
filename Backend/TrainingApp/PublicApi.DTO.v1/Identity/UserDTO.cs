@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Domain;
 
 namespace PublicApi.DTO.v1.Identity
@@ -12,8 +13,11 @@ namespace PublicApi.DTO.v1.Identity
         public string phoneNumber { get; set; }
         public string teamName { get; set; }
         public string token { get; set; }
-        public  string position { get; set; }
+        public  List<PlayerPositionDTO> positions { get; set; }
+        
+        public string role { get; set; }
         
         public ICollection<Notification> userNotifications { get; set; }
+        public Guid? teamId { get; set; }
     }
 }

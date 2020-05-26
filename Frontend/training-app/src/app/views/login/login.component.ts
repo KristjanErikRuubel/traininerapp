@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
     form: FormGroup;
@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
             try {
                 const email = this.form.get('username').value;
                 const password = this.form.get('password').value;
-                await this.authService.login(email, password).subscribe(data =>{
-                    if (data.token != null){
+                await this.authService.login(email, password).subscribe(data => {
+                    if (data.token != null) {
                         this.router.navigate([this.returnUrl]);
                     }
-                    
+
                 });
                
             } catch (err) {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain;
 using PublicApi.DTO.v1;
 
 namespace Contracts.BLL.App.Services

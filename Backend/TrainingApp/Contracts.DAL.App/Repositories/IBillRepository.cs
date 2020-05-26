@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Contracts.DAL.Base.Repositories;
-using Domain;
+using DAL.App.DTO;
+using ee.itcollege.krruub.Contracts.DAL.Base.Repositories;
 
 namespace Contracts.DAL.App.Repositories
 {
@@ -13,6 +13,8 @@ namespace Contracts.DAL.App.Repositories
 
         Task<bool> ExistsAsync(Guid id, Guid? userId = null);
         Task DeleteAsync(Guid id, Guid? userId = null);
-        
+
+        Task<IEnumerable<Bill>> GetUserBills(Guid userId);
+
     }
 }

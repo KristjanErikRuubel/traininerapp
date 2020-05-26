@@ -1,8 +1,6 @@
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Contracts.DAL.App.deps.json
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Contracts.DAL.App.dll
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Contracts.DAL.App.pdb
-C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Contracts.DAL.Base.dll
-C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Contracts.DAL.Base.pdb
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.csprojAssemblyReference.cache
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.csproj.CoreCompileInputs.cache
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.AssemblyInfoInputs.cache
@@ -10,7 +8,9 @@ C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\ob
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.csproj.CopyComplete
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.dll
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\obj\Debug\netcoreapp3.1\Contracts.DAL.App.pdb
-C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\DAL.Base.dll
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Domain.dll
 C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\Domain.pdb
-C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\DAL.Base.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\PublicApi.DTO.v1.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\PublicApi.DTO.v1.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\DAL.App.DTO.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\Contracts.DAL.App\bin\Debug\netcoreapp3.1\DAL.App.DTO.pdb

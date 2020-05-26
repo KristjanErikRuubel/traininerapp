@@ -5,6 +5,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TeamService} from '../../services/team.service';
 import {NgxMaterialTimepickerTheme} from 'ngx-material-timepicker';
+import {AuthService} from '../../services/auth.service';
 
 
 @Component({
@@ -13,51 +14,29 @@ import {NgxMaterialTimepickerTheme} from 'ngx-material-timepicker';
     styleUrls: ['./create-training.component.scss']
 })
 export class CreateTrainingComponent implements OnInit {
-    places: any;
-    trainingFrom: any;
-    notificationOptions: any;
-    players: any;
 
     constructor(private trainingPlaceService: TrainingPlaceService,
-                private trainingService: TrainingService,   
+                private trainingService: TrainingService,
                 private fb: FormBuilder,
                 private route: ActivatedRoute,
                 private router: Router,
-                private teamService: TeamService) {
+                private teamService: TeamService,
+                private authService: AuthService) {
         this.trainingFrom = this.fb.group({
             duration: ['', Validators.required],
             start: ['', Validators.required],
             description: ['', Validators.required],
             notificationDescription: ['', Validators.required],
             place: ['', Validators.required],
-            startTime: ['', Validators.required]
+            startTime: ['', Validators.required],
+            createdBy: []
         });
     }
-
-    async ngOnInit(){
-        await this.trainingPlaceService.getTrainingPlaces().subscribe(data => this.places = data);
-        this.notificationOptions = [{viewData: "All team members"}, {viewData: "selected members"}];
-        this.teamService.getPlayersInTeam().subscribe(data => this.players = data);
-    }
-    
-    onSubmit(){
-        let form = {
-            duration : this.trainingFrom.get('duration').value,
-            start: this.trainingFrom.get('start').value,
-            startTime: this.trainingFrom.get('startTime').value,
-            description: this.trainingFrom.get('description').value,
-            trainingPlaceId: this.trainingFrom.get('place').value,
-            notificationContent: this.trainingFrom.get('notificationDescription').value,
-            peopleInvited: this.players
-        };
-        this.trainingService.createTraining(form).then( r =>
-            this.router.navigate(["/home"])
-        );
-    }
-    
-    removeFromInvited(id : string){
-       this.players = this.players.filter(pl => pl.id != id);
-    }
+    places: any;
+    trainingFrom: any;
+    notificationOptions: any;
+    players: any;
+    user;
 
     darkTheme: NgxMaterialTimepickerTheme = {
         container: {
@@ -73,4 +52,30 @@ export class CreateTrainingComponent implements OnInit {
             clockFaceTimeInactiveColor: '#fff'
         }
     };
+
+    ngOnInit() {
+        this.trainingPlaceService.getTrainingPlaces().subscribe(data => this.places = data);
+        this.teamService.getPlayersInTeam().subscribe(data => this.players = data);
+        this.authService.currentUser.subscribe(data => this.user = data);
+    }
+
+    onSubmit() {
+        const form = {
+            duration: this.trainingFrom.get('duration').value,
+            start: this.trainingFrom.get('start').value,
+            startTime: this.trainingFrom.get('startTime').value,
+            description: this.trainingFrom.get('description').value,
+            trainingPlaceId: this.trainingFrom.get('place').value,
+            notificationContent: this.trainingFrom.get('notificationDescription').value,
+            peopleInvited: this.players,
+            createdBy: this.user
+        };
+        this.trainingService.createTraining(form).then(r =>
+            this.router.navigate(['/home'])
+        );
+    }
+
+    removeFromInvited(id: string) {
+        this.players = this.players.filter(pl => pl.id !== id);
+    }
 }

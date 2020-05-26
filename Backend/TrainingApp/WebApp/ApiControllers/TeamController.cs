@@ -1,14 +1,9 @@
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Contracts.BLL.App.Services;
-using Microsoft.AspNetCore.Http;
+using Contracts.BLL.App;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using DAL.App.EF;
-using Domain;
-using Domain.Identity;
+using PublicApi.DTO.v1;
 using PublicApi.DTO.v1.Identity;
 
 namespace WebApp.ApiControllers
@@ -17,19 +12,30 @@ namespace WebApp.ApiControllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        private ITeamService _teamService;
-        private ITrainingService _trainingService;
+        private IAppBLL _bll;
 
-        public TeamController(ITeamService teamService, ITrainingService trainingService)
+        public TeamController(IAppBLL bll)
         {
-            _teamService = teamService;
-            _trainingService = trainingService;
+            _bll = bll;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TeamDTO>>> GetTeams()
+        {
+            return await _bll.TeamService.GetTeams();
+        }
+
+        [HttpPost]
+        public async Task CreateTeam([FromBody] NewTeamDTO dto)
+        {
+            await _bll.TeamService.AddTeam(dto);
         }
         
+        [Route("removePlayer")]
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<UserDTO>>> GetPersonsInTeam([FromBody] UserDTO user)
+        public async Task RemovePlayerFromTeam([FromBody] UserDTO dto)
         {
-            return await _teamService.getPersonsInTeam(user.teamName);
+            await _bll.AccountService.RemovePlayerFromTeam(dto);
         }
     }
 }

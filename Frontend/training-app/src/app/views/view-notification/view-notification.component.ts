@@ -15,7 +15,4 @@ export class ViewNotificationComponent implements OnInit {
     ngOnInit(): void {
         this.notificationService.getAllUserNotifications().subscribe(data => this.notifications = data);
     }
-    
-
-
 }

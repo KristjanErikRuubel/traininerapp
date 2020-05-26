@@ -15,17 +15,17 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj": {
-            "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.Base\\BLL.Base.csproj"
+          "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj": {
+            "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\BLL.App.DTO\\BLL.App.DTO.csproj"
+          },
+          "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.App\\Contracts.BLL.App.csproj": {
+            "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.BLL.App\\Contracts.BLL.App.csproj"
           },
           "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
             "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
           },
           "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj": {
             "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\DAL.App.EF\\DAL.App.EF.csproj"
-          },
-          "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj": {
-            "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\Identity\\Identity.csproj"
           },
           "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj": {
             "projectPath": "C:\\Users\\kristjan\\Desktop\\icd0009-2019s\\Backend\\TrainingApp\\PublicApi.DTO.v1\\PublicApi.DTO.v1.csproj"
@@ -45,6 +45,14 @@
         "Microsoft.AspNetCore.Identity.UI": {
           "target": "Package",
           "version": "[3.1.2, )"
+        },
+        "ee.itcollege.krruub.BLL.Base": {
+          "target": "Package",
+          "version": "[1.0.0, )"
+        },
+        "ee.itcollege.krruub.Contracts.BLL.Base": {
+          "target": "Package",
+          "version": "[1.0.0, )"
         }
       },
       "imports": [

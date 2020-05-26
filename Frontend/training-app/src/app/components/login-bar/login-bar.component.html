@@ -1,8 +1,10 @@
 <div class="container">
-    <div *ngIf="!isAuthenticated">
+    <div *ngIf="!isAuthenticated else elseBlock">
         <a mat-button [routerLink]="'/login'">Login</a>|<a mat-button [routerLink]="'/register'">Register</a>
     </div>
-    <button mat-button *ngIf="isAuthenticated" (click)="logout()">
-        <mat-icon>exit_to_app</mat-icon>Logout
-    </button>
+    <ng-template #elseBlock>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>Logout
+        </button>
+    </ng-template>
 </div>

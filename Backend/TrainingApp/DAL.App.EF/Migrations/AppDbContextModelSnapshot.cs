@@ -25,15 +25,18 @@ namespace DAL.App.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AppUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Deadline")
+                        .HasColumnType("datetime2");
+
                     b.Property<short>("Total")
                         .HasColumnType("smallint");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Bills");
                 });
@@ -75,6 +78,9 @@ namespace DAL.App.EF.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AppRoleId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -87,12 +93,10 @@ namespace DAL.App.EF.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(128)")
                         .HasMaxLength(128);
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(128)")
                         .HasMaxLength(128);
 
@@ -119,13 +123,10 @@ namespace DAL.App.EF.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TeamId")
+                    b.Property<Guid?>("TeamId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -145,8 +146,6 @@ namespace DAL.App.EF.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("RoleId");
-
                     b.HasIndex("TeamId");
 
                     b.ToTable("AspNetUsers");
@@ -158,18 +157,19 @@ namespace DAL.App.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AppUserId")
+                    b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NotificationType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Recived")
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("TrainingId")
@@ -197,15 +197,36 @@ namespace DAL.App.EF.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NotificationId")
+                    b.Property<Guid?>("NotificationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NotificationId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[NotificationId] IS NOT NULL");
 
                     b.ToTable("NotificationAnswers");
+                });
+
+            modelBuilder.Entity("Domain.PlayerPosition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PersonPosition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("PlayerPositions");
                 });
 
             modelBuilder.Entity("Domain.Team", b =>
@@ -215,11 +236,9 @@ namespace DAL.App.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -231,6 +250,9 @@ namespace DAL.App.EF.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -256,9 +278,32 @@ namespace DAL.App.EF.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AppUserId");
+
                     b.HasIndex("TrainingPlaceId");
 
                     b.ToTable("Trainings");
+                });
+
+            modelBuilder.Entity("Domain.TrainingInBill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BillId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("TrainingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillId");
+
+                    b.HasIndex("TrainingId");
+
+                    b.ToTable("TrainingInBills");
                 });
 
             modelBuilder.Entity("Domain.TrainingPlace", b =>
@@ -308,25 +353,6 @@ namespace DAL.App.EF.Migrations
                     b.HasIndex("TrainingId");
 
                     b.ToTable("UsersInTrainings");
-                });
-
-            modelBuilder.Entity("Domain.UserRoleInTeam", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("PersonPosition")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserRoleInTeams");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -434,33 +460,23 @@ namespace DAL.App.EF.Migrations
                 {
                     b.HasOne("Domain.Identity.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Identity.AppUser", b =>
                 {
-                    b.HasOne("Domain.UserRoleInTeam", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Team", "Team")
-                        .WithMany("Users")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("TeamId");
                 });
 
             modelBuilder.Entity("Domain.Notification", b =>
                 {
                     b.HasOne("Domain.Identity.AppUser", "Reciver")
                         .WithMany()
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppUserId");
 
                     b.HasOne("Domain.Training", "Training")
                         .WithMany()
@@ -471,13 +487,22 @@ namespace DAL.App.EF.Migrations
                 {
                     b.HasOne("Domain.Notification", "Notification")
                         .WithOne("NotificationAnswer")
-                        .HasForeignKey("Domain.NotificationAnswer", "NotificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Domain.NotificationAnswer", "NotificationId");
+                });
+
+            modelBuilder.Entity("Domain.PlayerPosition", b =>
+                {
+                    b.HasOne("Domain.Identity.AppUser", null)
+                        .WithMany("PlayerPositions")
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("Domain.Training", b =>
                 {
+                    b.HasOne("Domain.Identity.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("Domain.TrainingPlace", "TrainingPlace")
                         .WithMany()
                         .HasForeignKey("TrainingPlaceId")
@@ -485,9 +510,20 @@ namespace DAL.App.EF.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.TrainingInBill", b =>
+                {
+                    b.HasOne("Domain.Bill", "Bill")
+                        .WithMany("Trainings")
+                        .HasForeignKey("BillId");
+
+                    b.HasOne("Domain.Training", "Training")
+                        .WithMany()
+                        .HasForeignKey("TrainingId");
+                });
+
             modelBuilder.Entity("Domain.UserInTraining", b =>
                 {
-                    b.HasOne("Domain.Identity.AppUser", "User")
+                    b.HasOne("Domain.Identity.AppUser", "AppUser")
                         .WithMany()
                         .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)

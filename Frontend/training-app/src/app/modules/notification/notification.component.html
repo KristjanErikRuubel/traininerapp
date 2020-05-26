@@ -13,8 +13,11 @@
                 </mat-card-footer>
             </mat-card>
         </div>
-        <span *ngIf="notifications.length === 0">
+        <div *ngIf="notifications.length === 0" class="container">
+               <span class="justify-content-center" >
             You have no new notifications
         </span>
+        </div>
+     
     </div>
 </div>

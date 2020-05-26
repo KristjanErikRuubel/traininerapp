@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
-using BLL.App.Services;
-using Contracts.BLL.App.Services;
-using DAL.App.EF;
+using Contracts.BLL.App;
 using Domain;
 using Domain.Identity;
-using Identity;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using PublicApi.DTO.v1;
 using PublicApi.DTO.v1.Identity;
 
@@ -24,21 +16,18 @@ namespace WebApp.ApiControllers.Identity
     [Route("api/[controller]/[action]")]
     public class AccountController : ControllerBase
     {
-        private readonly IAccountService _accountService;
-        private ITrainingService _trainingService;
-        private IEmailSender _emailSender;
-
-        public AccountController(IAccountService accountService, ITrainingService trainingService, IEmailSender emailSender)
+        private IAppBLL _bll;
+        private RoleManager<AppRole> _roleManager;
+        public AccountController( IAppBLL bll, RoleManager<AppRole> roleManager)
         {
-            _accountService = accountService;
-            _trainingService = trainingService;
-            _emailSender = emailSender;
+            _bll = bll;
+            _roleManager = roleManager;
         }
 
         [HttpPost]
         public async Task<ActionResult<string>> Login([FromBody] LoginDTO model)
         {
-            var userDto = await _accountService.Login(model);
+            var userDto = await _bll.AccountService.Login(model);
             if (userDto == null)
             {
                 return StatusCode(403);
@@ -46,12 +35,11 @@ namespace WebApp.ApiControllers.Identity
 
             return Ok(userDto);
         }
-
-
+        
         [HttpPost]
         public async Task<ActionResult<string>> Register([FromBody] RegisterDTO model)
         {
-            var userDto = await _accountService.Register(model);
+            var userDto = await _bll.AccountService.Register(model);
             if (userDto == null)
             {
                 return StatusCode(403);
@@ -59,35 +47,42 @@ namespace WebApp.ApiControllers.Identity
             return Ok(userDto);
         }
         
-        [HttpPost]
-        public async Task<ActionResult<string>> GetUserNotifications([FromBody] UserDTO model)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<string>> GetUserNotifications(Guid id)
         {
-            var notifications = await _accountService.GetUserNewNotifications(model);
+            var notifications = await _bll.AccountService.GetUserNewNotifications(id);
             return Ok(notifications);
         }
-        [HttpPost]
-        public async Task<ActionResult<string>> GetAllUserNotifications([FromBody] UserDTO model)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<string>> GetAllUserNotifications(Guid id)
         {
-            var notifications = await _accountService.GetAllUserNewNotifications(model);
+            var notifications = await _bll.AccountService.GetAllUserNewNotifications(id);
             return Ok(notifications);
         }
                 
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<TrainingDTO>>> GetUserTrainings([FromBody] UserDTO userDto)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<TrainingDTO>>> GetUserTrainings(Guid id)
         {
-            //[FromBody] string userId
-            return await _trainingService.GetUserTrainings(userDto.Id);
+            return await _bll.TrainingService.GetUserTrainings(id);
         }
 
         
-        
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsersInTeam(Guid id)
+        {
+            return await _bll.AccountService.GetAllUsersInTeam(id);
+        }
+
         [HttpGet]
-        public async Task test()
+        public async Task<List<AppRole>> GetApplicationRoles()
         {
-
-            await _emailSender.SendEmailAsync("dsas", "sdadsads", "dsdsdad");
-
+            return await _roleManager.Roles.ToListAsync();
         }
-        
+
+        [HttpGet("{id}")]
+        public async Task<List<PlayerPosition>> GetPlayerPositions(Guid id)
+        {
+            return null; //  await _bll.PlayerPositions.GetPlayerPositions(id);
+        }
     }
 }

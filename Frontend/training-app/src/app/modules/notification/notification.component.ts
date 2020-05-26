@@ -19,18 +19,17 @@ export class NotificationComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.notifications= [];
-        this.notificationService.getNotificationsForUser().subscribe(data => this.notifications = data );
-     
+        this.notifications = [];
+        this.notificationService.getNotificationsForUser().subscribe(data => this.notifications = data);
     }
 
     openNotificationAnswerModal(notification: any) {
         this.modalDataService.setNotification(notification);
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
-        dialogConfig.id = "modal-component";
-        dialogConfig.height = "600px";
-        dialogConfig.width = "600px";
+        dialogConfig.id = 'modal-component';
+        dialogConfig.height = '600px';
+        dialogConfig.width = '600px';
         const modalDialog = this.matDialog.open(NotificationAnswerComponent, dialogConfig);
     }
 }
