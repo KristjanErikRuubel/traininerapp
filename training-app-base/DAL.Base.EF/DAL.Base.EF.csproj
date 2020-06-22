@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>ee.itcollege.krruub.DAL.Base.EF</AssemblyName>
+        <RootNamespace>ee.itcollege.krruub.DAL.Base.EF</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Contracts.DAL.Base\Contracts.DAL.Base.csproj" />
+      <ProjectReference Include="..\DAL.Base\DAL.Base.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="9.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    </ItemGroup>
+
+</Project>

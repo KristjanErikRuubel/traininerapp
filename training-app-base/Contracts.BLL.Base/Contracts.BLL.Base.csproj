@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>ee.itcollege.krruub.Contracts.BLL.Base</AssemblyName>
+        <RootNamespace>ee.itcollege.krruub.Contracts.BLL.Base</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Contracts.DAL.Base\Contracts.DAL.Base.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0-preview.2.20120.8" />
+    </ItemGroup>
+
+</Project>

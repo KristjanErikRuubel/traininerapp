@@ -1,0 +1,14 @@
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.BLL.Base.deps.json
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.BLL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.BLL.Base.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.BLL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.BLL.Base.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\BLL.Base.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\BLL.Base.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\BLL.Base.AssemblyInfoInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\BLL.Base.AssemblyInfo.cs
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\BLL.Base.csproj.CopyComplete
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\ee.itcollege.krruub.BLL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\BLL.Base\obj\Release\netcoreapp3.1\ee.itcollege.krruub.BLL.Base.pdb

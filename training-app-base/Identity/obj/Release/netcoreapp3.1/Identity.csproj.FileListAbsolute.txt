@@ -1,0 +1,9 @@
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Identity.deps.json
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Identity.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Identity.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\Identity.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\Identity.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\Identity.AssemblyInfoInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\Identity.AssemblyInfo.cs
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\ee.itcollege.krruub.Identity.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Identity\obj\Release\netcoreapp3.1\ee.itcollege.krruub.Identity.pdb

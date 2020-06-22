@@ -1,0 +1,9 @@
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\bin\Release\netcoreapp3.1\DAL.App.DTO.deps.json
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\bin\Release\netcoreapp3.1\DAL.App.DTO.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\bin\Release\netcoreapp3.1\DAL.App.DTO.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.AssemblyInfoInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.AssemblyInfo.cs
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\Backend\TrainingApp\DAL.App.DTO\obj\Release\netcoreapp3.1\DAL.App.DTO.pdb

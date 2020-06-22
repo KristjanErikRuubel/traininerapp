@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-card>
+        <form [formGroup]="feedBackForm">
+            <h2 class="text-center">Give feedback to improve this app</h2>
+            <div class="form-group "> 
+                <mat-form-field class="input row m-4">
+                    <input type="number" matInput placeholder="Rating from 1-5" max="5" min="0" formControlName="rating" required>
+                    <mat-error>
+                        Please provide rating for this app
+                    </mat-error>
+                </mat-form-field>
+                <div class="">
+                 
+                </div>
+                
+            </div>
+            <div class="row m-4">
+                <label for="feedback-text-area">Feedback</label>
+                <textarea class="form-control" formControlName="feedback" id="feedback-text-area"
+                          rows="5" placeholder="Write your feedback here">
+                    
+                </textarea>
+            </div>
+            
+            <div class="row justify-content-center">
+                <button mat-raised-button color="primary" class="" (click)="onSubmit()" >Submit</button>
+            </div>
+            
+        </form>
+    </mat-card>
+</div>

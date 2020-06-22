@@ -1,0 +1,9 @@
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.deps.json
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\bin\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.pdb
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\Contracts.DAL.Base.csprojAssemblyReference.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\Contracts.DAL.Base.csproj.CoreCompileInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\Contracts.DAL.Base.AssemblyInfoInputs.cache
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\Contracts.DAL.Base.AssemblyInfo.cs
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.dll
+C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\Contracts.DAL.Base\obj\Release\netcoreapp3.1\ee.itcollege.krruub.Contracts.DAL.Base.pdb

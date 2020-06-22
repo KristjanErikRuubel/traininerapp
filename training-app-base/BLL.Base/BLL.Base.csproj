@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>ee.itcollege.krruub.BLL.Base</AssemblyName>
+        <RootNamespace>ee.itcollege.krruub.BLL.Base</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Contracts.BLL.Base\Contracts.BLL.Base.csproj" />
+      <ProjectReference Include="..\Contracts.DAL.Base\Contracts.DAL.Base.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="9.0.0" />
+    </ItemGroup>
+
+</Project>

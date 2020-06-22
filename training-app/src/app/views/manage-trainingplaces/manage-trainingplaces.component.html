@@ -1,0 +1,60 @@
+<div class="container">
+    <h1 class="text-center">Training facilities</h1>
+    <form [formGroup]="trainingPlaceForm" class="container border">
+        <h2>Add new training place</h2>
+        <mat-form-field class="full-width-input m-4 row">
+            <input matInput placeholder="Address" formControlName="address" required>
+            <mat-error>
+                Please enter address
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input m-4 row">
+            <input matInput placeholder="Training place name" formControlName="name" required>
+            <mat-error>
+                Please enter name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input m-4 row">
+            <input matInput  placeholder="Opening time" formControlName="openingTime" required>
+            <mat-error>
+                Please enter opening time 
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input m-4 row">
+            <input matInput  placeholder="Closing time" formControlName="closingTime" required>
+            <mat-error>
+                Please enter closing time
+            </mat-error>
+        </mat-form-field>
+        <div class="wrapper">
+            <button mat-raised-button class="m-2" (click)="onSubmit()" color="primary">Create</button>
+        </div>
+    </form>
+    <div class="container mt-4">
+        <h1>Training Places</h1>
+        <table class="table mat-table">
+            <thead>
+            <th>
+                Address
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Opening time
+            </th>
+            <th>
+                Closing time
+            </th>
+            <th></th>
+            </thead>
+            <tr *ngFor="let trainingPlace of trainingPlaces">
+                <td>{{trainingPlace.address}}</td>
+                <td>{{trainingPlace.name}}</td>
+                <td>{{trainingPlace.openingTime}}</td>
+                <td>{{trainingPlace.closingTime}}</td>
+                <td><button mat-raised-button color="primary" routerLink="/trainingplace/edit/{{trainingPlace.id}}">Edit</button> | <button mat-raised-button color="warn" (click)="delete(trainingPlace.id)"> Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

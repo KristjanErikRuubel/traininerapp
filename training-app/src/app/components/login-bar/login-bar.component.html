@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngIf="!this.user else elseBlock">
+        <a mat-button [routerLink]="'/login'">Login</a>|<a mat-button [routerLink]="'/register'">Register</a>
+    </div>
+    <ng-template #elseBlock>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>Logout
+        </button>
+    </ng-template>
+</div>

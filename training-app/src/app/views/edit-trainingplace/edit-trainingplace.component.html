@@ -1,0 +1,32 @@
+<div class="container">
+    <form [formGroup]="trainingPlaceForm" class="container border">
+    <h2>Edit training place</h2>
+    <mat-form-field class="full-width-input m-4 row">
+        <input matInput placeholder="Address" formControlName="address" value="{{trainingPlace.address}}" required>
+        <mat-error>
+            Please enter address
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input m-4 row">
+        <input matInput placeholder="Training place name" value="{{trainingPlace.name}}"  formControlName="name" required>
+        <mat-error>
+            Please enter name
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input m-4 row">
+        <input matInput  placeholder="Opening time" value="{{trainingPlace.openingTime}}" formControlName="openingTime" required>
+        <mat-error>
+            Please enter opening time
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input m-4 row">
+        <input matInput  placeholder="Closing time" value="{{trainingPlace.closingTime}}"  formControlName="closingTime" required>
+        <mat-error>
+            Please enter closing time
+        </mat-error>
+    </mat-form-field>
+    <div class="text-center">
+        <button mat-raised-button class="m-2" (click)="onSubmit()" color="primary">Create</button>
+    </div>
+    </form>
+</div>

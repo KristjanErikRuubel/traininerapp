@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>ee.itcollege.krruub.DAL.Base</AssemblyName>
+        <RootNamespace>ee.itcollege.krruub.DAL.Base</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Contracts.DAL.Base\Contracts.DAL.Base.csproj" />
+    </ItemGroup>
+
+</Project>

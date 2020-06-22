@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kristjan\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\kristjan\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\kristjan\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\kristjan\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kristjan\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_training-app-base.-1424367488.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base" t="IncludeFlat">
+      <e p="BLL.Base" t="IncludeRecursive">
+        <e p="BaseBLL.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BLL.Base.csproj" t="IncludeRecursive" />
+        <e p="Mappers" t="Include">
+          <e p="BaseBLLMapper.cs" t="Include" />
+          <e p="IdentityMapper.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="BLL.Base.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="BaseEntityService.cs" t="Include" />
+          <e p="BaseService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Contracts.BLL.Base" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts.BLL.Base.csproj" t="IncludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="IBaseRepositoryProvider.cs" t="Include" />
+          <e p="IBaseServiceFactory.cs" t="Include" />
+        </e>
+        <e p="IBaseBLL.cs" t="Include" />
+        <e p="Mappers" t="Include">
+          <e p="IBaseBLLMapper.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Contracts.BLL.Base.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="IBaseService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Contracts.DAL.Base" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts.DAL.Base.csproj" t="IncludeRecursive" />
+        <e p="IBaseUnitOfWork.cs" t="Include" />
+        <e p="IDomainBaseEntity.cs" t="Include" />
+        <e p="IDomainEntity.cs" t="Include" />
+        <e p="IDomainEntityBaseMetadata.cs" t="Include" />
+        <e p="IDomainEntityUser.cs" t="Include" />
+        <e p="IDomainMetadata.cs" t="Include" />
+        <e p="IUserNameProvider.cs" t="Include" />
+        <e p="Mappers" t="Include">
+          <e p="IBaseDALMapper.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Contracts.DAL.Base.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="IBaseRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="DAL.Base" t="IncludeRecursive">
+        <e p="BaseUnitOfWork.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DAL.Base.csproj" t="IncludeRecursive" />
+        <e p="DomainBaseEntity.cs" t="Include" />
+        <e p="DomainEntity.cs" t="Include" />
+        <e p="DomainEntityMetaData.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="DAL.Base.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="DAL.Base.EF" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DAL.Base.EF.csproj" t="IncludeRecursive" />
+        <e p="EFBaseUnitOfWork.cs" t="Include" />
+        <e p="Mappers" t="Include">
+          <e p="BaseDALMapper.cs" t="Include" />
+          <e p="IdentityMapper.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="DAL.Base.EF.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="EFBaseRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Directory.Build.props" t="Include" />
+      <e p="Identity" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Identity.csproj" t="IncludeRecursive" />
+        <e p="IdentityExtentsions.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Identity.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SolutionItems" t="Include" />
+      <e p="training-app-base.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

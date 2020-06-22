@@ -1,0 +1,23 @@
+<div class="container justify-content-center">
+    <h1 class="ml-2">
+        Your invoices
+    </h1>
+    <div class="container">
+        <h3></h3>
+        <table class="table table-light">
+            <tr class="thead thead-dark">
+                <th>User</th> 
+                <th>Deadline</th> 
+                <th>Trainings</th> 
+                <th>Total</th>
+            </tr>
+            <tr *ngFor="let bill of bills">
+                <td>{{user.userName}}</td>
+                <td>{{bill.deadline | date: "dd MMM yyyy"}}</td>
+                <td>{{bill.trainings.length}}</td>
+                <td>{{bill.total}}</td>
+            </tr>
+        </table>
+        
+    </div>
+</div>

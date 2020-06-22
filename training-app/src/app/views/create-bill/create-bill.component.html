@@ -1,0 +1,48 @@
+<div class="container">
+    <h2 class="text-center">Create new invoice</h2>
+        <div *ngIf="!this.user; else elseBlock" class="text-center">
+            <span>Please choose player you wish to send a new bill</span>
+            <form [formGroup]="userForm">
+                <mat-form-field class="m-4">
+                    <mat-label>Player</mat-label>
+                    <mat-select 
+                        (ngModelChange)="selectUser()"
+                        formControlName="user">
+                        
+                        <mat-option *ngFor="let user of users" [value]="user">
+                            {{user.userName}} {{user.email}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+        <ng-template #elseBlock>
+            <mat-card class="">
+                <form [formGroup]="billForm" class="bill-form container">
+                    <mat-form-field class="m-4 row">
+                        <mat-label>Trainings to bill for</mat-label>
+                        <mat-select formControlName="trainings" multiple>
+                            <mat-option *ngFor="let training of trainings" [value]="training">
+                                {{training.trainingDate | date : "dd MMM yyyy"}}  {{training.trainingPlace.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>
+                            Please choose trainings!
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width-input m-4 row">
+                        <input matInput type="number" placeholder="Invoice total" formControlName="total" required>
+                        <mat-error>
+                            Please enter invoice total
+                        </mat-error>
+                    </mat-form-field>
+                       <mat-form-field class="input m-4 row">
+                           <input matInput formControlName="deadline" [matDatepicker]="picker" placeholder="Choose a deadline" readonly>
+                           <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                           <mat-datepicker #picker></mat-datepicker>
+                       </mat-form-field>
+                    <button class="row" mat-raised-button (click)="onSubmit()" >Create new invoice</button>
+                </form>
+            </mat-card>
+        </ng-template>
+</div>

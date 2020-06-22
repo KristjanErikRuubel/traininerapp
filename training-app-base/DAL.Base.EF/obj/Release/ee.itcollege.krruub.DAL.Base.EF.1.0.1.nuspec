@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ee.itcollege.krruub.DAL.Base.EF</id>
+    <version>1.0.1</version>
+    <authors>ee.itcollege.krruub.DAL.Base.EF</authors>
+    <owners>ee.itcollege.krruub.DAL.Base.EF</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="ee.itcollege.krruub.Contracts.DAL.Base" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="ee.itcollege.krruub.DAL.Base" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="AutoMapper" version="9.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\kristjan\Desktop\icd0009-2019s\training-app-base\DAL.Base.EF\bin\Release\netcoreapp3.1\ee.itcollege.krruub.DAL.Base.EF.dll" target="lib\netcoreapp3.1\ee.itcollege.krruub.DAL.Base.EF.dll" />
+  </files>
+</package>

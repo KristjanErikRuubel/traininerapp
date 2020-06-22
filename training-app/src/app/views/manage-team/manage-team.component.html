@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <h2 class="text-center mt-4">Manage football players in the club</h2>
+
+    <table class="table table-light mr-4  ml-4">
+        <tr class="thead thead-dark">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Team</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let player of players">
+            <td>{{player.userName}}</td>
+            <td>{{player.email}}</td>
+            <td>{{player.phoneNumber}}</td>
+            <td>{{player.teamName}}</td>
+            <td><button (click)="remove(player)" class="btn btn-danger" >remove player</button></td>
+        </tr>
+    </table>
+</div>
