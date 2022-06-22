@@ -20,7 +20,7 @@
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0-preview.1.20120.4" />
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.0" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="NUnit" Version="3.12.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
